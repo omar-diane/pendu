@@ -1,24 +1,23 @@
 <?php
 session_start();
 
-$string = file_get_contents('mots.txt');
-$result = explode(' ',$string);
-$result = $result[array_rand($result)];
-$_GET['word'] = $result;
+$letter;
+$word = file_get_contents('mots.txt');
 
 if(isset($_GET['word'])){
+    //Je récupère le mot qui est envoyer.
     $user_word = $_GET['word'];
+    /*Je test si l'utilisateur rentre un mot et que le mot est différent du mot
+      qui doit être trouvé alors il echo un message*/ 
+    if($user_word != $word) {
+        echo 'Pas le bon mot';
+        /*Si l'utilisateur rentre un mot et que le mot est le mot à trouvé,
+          il echo un message*/
+        elseif ($user_word === $word)
+        echo 'BRAVO !';
+    } else 
+    echo 'Essayez';
 
-    if($user_word < $word){
-    echo 'Mot trop petit.';
-    } elseif 
-        ($user_word > $word) {
-            echo 'Mot trop long.';
-        } elseif
-            ($user_word === $word){
-                echo 'Bravo !';
-            }
-        }
 ?>
 
 <!DOCTYPE html>
