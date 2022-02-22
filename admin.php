@@ -20,7 +20,7 @@ if (isset($_POST["nouveaumot"])) {
     if (!isset($msg)) { // Ajout du mot dans le fichier .txt
         $fichierMot = fopen('mots.txt', 'a+');
         fputs($fichierMot, $nouveaumot . "\n");
-        $goodMsg = "Le mot à été rentré  dans le jeu";
+        $goodMsg = "Le mot à été rentré dans le jeu.";
     }
     header("location: admin.php");
 }

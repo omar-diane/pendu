@@ -130,7 +130,7 @@ if (isset($_GET['a']) && strlen($_GET['a']) == 1 && strpos($lettres, $_GET['a'])
                         }
                     }
                 } elseif ($_SESSION['error'] >= 7) { // Affiche le mot à la fin si on perd
-                    echo 'Le mot était ';
+                    echo 'Le mot était : ';
                     echo $_SESSION["mot"];
                 }
 
