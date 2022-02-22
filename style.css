@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+header h1 {
+    text-align: center;
+    font-family: monospace;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    background-color: red;
+    font-size: 150%;
+}
+main img {
+    height: 60%;
+}
+
+#error_msg{
+    display: flex;
+    justify-content: center;
+    background-color: rgba(54, 55, 63, 0.801);
+    color: aliceblue;
+    padding-top: 5%;
+}
+
+main section a {
+    padding: 2%;
+    color: black;
+}
+
+article form input {
+    background-color: bisque;
+    color: black;
+    cursor: pointer;
+}
+
+footer {
+    padding: 5%;
+    background-color: bisque;
+}
+
+footer a {
+    color: black;
+    font-size: 20px;
+}
