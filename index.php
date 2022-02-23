@@ -151,7 +151,7 @@ if (isset($_GET['a']) && strlen($_GET['a']) == 1 && strpos($lettres, $_GET['a'])
         </section>
     </main>
     <footer>
-        <li><a href="#">Mon Github</a></li>
+        <li><a href="https://github.com/omar-diane/pendu">Mon Github</a></li>
     </footer>
 </body>
 </html>

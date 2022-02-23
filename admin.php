@@ -69,7 +69,7 @@ if (isset($_POST["nouveaumot"])) {
         </section>
     </main>
     <footer>
-<li><a href="#">Mon Github</a></li>
+<li><a href="https://github.com/omar-diane/pendu">Mon Github</a></li>
     </footer> 
 </body>
 </html>
