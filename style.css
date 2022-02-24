@@ -1,8 +1,11 @@
 body {
     margin: 0;
     padding: 0;
-    text-decoration: none;
     list-style: none;
+}
+
+a {
+    text-decoration: none;
 }
 
 header h1 {
@@ -16,6 +19,7 @@ main {
     background-color: red;
     font-size: 150%;
 }
+
 main img {
     height: 60%;
 }
@@ -29,8 +33,8 @@ main img {
 }
 
 main section a {
-    padding: 2%;
-    color: black;
+    color: bisque;
+    margin-right: 10px;
 }
 
 article form input {

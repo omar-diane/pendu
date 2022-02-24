@@ -115,6 +115,7 @@ if (isset($_GET['a']) && strlen($_GET['a']) == 1 && strpos($lettres, $_GET['a'])
                 ?>
 
             </div>
+    
             <img src="pictures/pendu<?= $_SESSION['error'] ?>.png">
 
             <section>
