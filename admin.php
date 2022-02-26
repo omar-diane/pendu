@@ -6,20 +6,29 @@ if (!isset($arrayMot)) { // On compte le nombre de mot dans le fichier .txt
     $mottotal = count($arrayMot,) - 1;
 }
 
-if (isset($_POST["nouveaumot"])) {
-    $Nouveau = strip_tags(htmlspecialchars($_POST["nouveaumot"]));
-    $nouveaumot = $Nouveau;
-    if (strlen($_POST["nouveaumot"]) >= 15) { // Maximum de 15 lettres par mot
-        $msg = "le mot doit comporter moins de 15 lettres";
+if (isset($_GET["leMot"])) {
+
+        $key = strip_tags(htmlspecialchars($_GET["leMot"]));
+
+        unset($arrayMot[$key]);
+        file_put_contents("mots.txt", $arrayMot);
+        header("location: admin.php");
     }
+
+if (isset($_POST["newMot"])) {
+
+    $Nouveaumot = strip_tags(htmlspecialchars($_POST["newMot"]));
+
+    $newMot = deleteSpecialChar(strtolower($Nouveaumot));
+
     foreach (chooseWord($arrayMot) as $key => $mot) { // Si le mot rentré est identique à un mot déjà existant on met une erreur
-        if ($mot == $nouveaumot) {
+        if ($mot == $Nouveaumot) {
             $msg = " Le mot est déjà dans le jeu";
         }
     }
     if (!isset($msg)) { // Ajout du mot dans le fichier .txt
         $fichierMot = fopen('mots.txt', 'a+');
-        fputs($fichierMot, $nouveaumot . "\n");
+        fputs($fichierMot, $Nouveaumot . "\n");
         $goodMsg = "Le mot a bien été ajouté.";
     }
     header("location: admin.php");
@@ -45,8 +54,8 @@ if (isset($_POST["nouveaumot"])) {
             <article>
                 <h1>Entrez un nouveau mot :</h1>
                 <form action="" method="POST">
-                    <label for="nouveaumot">Rentrez un nouveau mot ici ^^ -></label>
-                    <input type="text" id="nouveaumot" name="nouveaumot">
+                    <label for="newMot">Rentrez un nouveau mot ici ^^ -></label>
+                    <input type="text" id="newMot" name="newMot">
                     <input class="btn btn-primary" type="submit" name="enoyer" value="envoyer">
                 </form>
                 <a class="btn btn-primary" href="index.php">Retourner au jeu !</a>
@@ -61,6 +70,7 @@ if (isset($_POST["nouveaumot"])) {
                     foreach ($arrayMot as $key => $mot) {
                     ?>
                         <li>Numéro <?= $key . " - " . $mot ?></li>
+                        <a href="./admin.php?leMot=<?= $key ?>">Supprimer</a>
                     <?php
                     }
                     ?>

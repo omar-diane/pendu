@@ -1,5 +1,3 @@
-ananas
-banane
 coding
 downtown
 element
@@ -25,3 +23,6 @@ xylophone
 yoyo
 zoroabc
 abc
+ananas
+zero
+omar
